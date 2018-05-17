@@ -1,0 +1,27 @@
+{
+  "name": "Lever Email Copy",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "In Lever it takes added steps to copy a candidate's email. This Chrome extension adds a copy button to make it a lot quicker to copy a candidate's email to your clipboard.",
+  "homepage_url": "https://github.com/ryanburgess/lever-email-copy/tree/master",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://hire.lever.co/*"],
+      "js": ["background.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Lever Email Copy"
+  },
+  "permissions": [
+    "tabs",
+    "https://hire.lever.co/*",
+    "http://hire.lever.co/*"
+  ]
+}
